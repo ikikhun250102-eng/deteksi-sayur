@@ -10,7 +10,10 @@ st.set_page_config(page_title="Deteksi Tanaman", page_icon="🌶️")
 @st.cache_resource
 def load_my_model():
     # Pastikan nama file ini sama dengan file .h5 kamu
-    model = tf.keras.models.load_model('model_sayur.h5')
+    model = tf.keras.models.load_model(
+    'model_sayur.h5',
+    compile=False
+)
     return model
 
 model = load_my_model()
